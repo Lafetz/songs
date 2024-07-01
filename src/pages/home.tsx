@@ -1,23 +1,27 @@
-
-import Song from '../types/songs'
-
 import { useEffect } from 'react'
 import { songsGetStart } from '../redux/slices/songsSlice'
 import SongComponent from '../components/songComponent'
-import { useAppDispatch, useAppSelector } from '../hooks/storeHooks'
+import { useAppDispatch, useAppSelector } from '../redux/store/storeHooks'
+import { Link } from 'react-router-dom'
 
 function Home() {
-const songs:Song[]=useAppSelector(state=>state.songs.songs)
+const {songs,isLoading}=useAppSelector(state=>state.songs)
 const dispatch=useAppDispatch()
 useEffect(()=>{
-dispatch(songsGetStart())
+  if(songs.length==0){
+    dispatch(songsGetStart())
+  }
+
 },[dispatch])
   return (
-    <>
-  {songs.map((song)=>{
+    
+    <div >
+    <Link to="/add"><button>Add Song</button></Link>
+    {isLoading?(<>loading..</>):( songs.map((song)=>{
     return<SongComponent key={song._id} song={song}/>
-  })}
-    </>
+  }))}
+ 
+    </div>
   )
 }
 

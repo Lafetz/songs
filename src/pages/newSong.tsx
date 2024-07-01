@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { songsAddRequest, songsAddStart } from '../redux/slices/songsSlice';
+import BackBtn from '../components/backBtn';
 
 interface SongForm{
     name:string,
@@ -26,6 +27,7 @@ const SongForm: React.FC = () => {
 
   return (
     <div>
+      <BackBtn/>
       <h2>Add New Song</h2>
       <label>
         Name:
