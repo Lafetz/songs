@@ -14,10 +14,10 @@ const SongComponent: React.FC<SongProps> = ({ song }) => {
        <Flex gap="10px" fontWeight="bold">
       <div>Name: {song.name}</div>
       <div>URL: {song.url}</div>
-      <div>Genre:</div>
-      <div>Artist: </div>
-      <div>Album: </div>
-      <div>Release Date: </div>
+      <div>Genre:{song.genre}</div>
+      <div>Artist:{song.artist} </div>
+      <div>Album: {song.album}</div>
+      <div>Release Date:{song.releaseDate} </div>
     </Flex>
       <Link to={`/songs/${song._id}`}><Button buttonColor='#059669' hoverColor='#065f46'> edit</Button></Link>
    
