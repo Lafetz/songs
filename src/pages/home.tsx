@@ -17,9 +17,7 @@ useEffect(()=>{
   }
 },[dispatch])
   return (
-    <Flex padding='15px 0 0 0' gap='40px' flexDirection='column' width='100%' min-height='100vh' >
-    
-    
+    <Flex padding='15px 0 0 0' gap='40px' flexDirection='column' width='100%' min-height='100vh' alignItems='center' >
     {isLoading?(<Loading />):(<><Link to="/add"><Button >Add Song</Button></Link> <Flex gap="15px">{ songs.map((song)=>{
     return<SongComponent key={song._id} song={song}/>
   })}
