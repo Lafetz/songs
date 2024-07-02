@@ -44,11 +44,13 @@ const songsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    //@ts-ignore
     songsAddRequest(state, action: PayloadAction<Omit<Song, "_id">>) {
       state.isLoading = true;
     },
 
     // Update Song
+    //@ts-ignore
     songsUpdateStart(state, action: PayloadAction<Song>) {
       state.isLoading = true;
       state.error = null;
@@ -68,6 +70,7 @@ const songsSlice = createSlice({
     },
 
     // Delete Song
+    //@ts-ignore
     songsDeleteStart(state, action: PayloadAction<string>) {
       state.isLoading = true;
       state.error = null;

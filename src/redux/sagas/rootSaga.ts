@@ -1,5 +1,5 @@
 import { all } from "redux-saga/effects";
-import songsSaga from "./songsSaga"; // Adjust path as per your project structure
+import songsSaga from "./songsSaga";
 
 export default function* rootSaga() {
   yield all([songsSaga()]);

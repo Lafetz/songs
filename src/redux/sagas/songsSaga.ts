@@ -1,10 +1,9 @@
-import { takeLatest, call, put, takeEvery } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 
 import {
   songsGetStart,
   songsGetSuccess,
   songsGetFailure,
-  songsAddStart,
   songsAddSuccess,
   songsAddFailure,
   songsAddRequest,
@@ -14,7 +13,7 @@ import {
   songsDeleteStart,
   songsDeleteSuccess,
   songsDeleteFailure,
-} from "../slices/songsSlice"; // Adjust path as per your project structure
+} from "../slices/songsSlice";
 import Song from "../../types/songs";
 import { songsAPI } from "../../services/songApi";
 import { PayloadAction } from "@reduxjs/toolkit";
